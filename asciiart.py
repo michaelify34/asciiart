@@ -20,7 +20,8 @@ for x in range(len(brightnessmatrix)):
     for y in range(len(brightnessmatrix[x])):
         #convert pixel to average brightness value
         brightnessmatrix[x][y] = (brightnessmatrix[x][y][0]+brightnessmatrix[x][y][1]+brightnessmatrix[x][y][2]) // 3
-        brightnessmatrix[x][y] -= 1
+        if brightnessmatrix[x][y] > 1:
+            brightnessmatrix[x][y] -= 1
 
 
 #set brightness values to ascii characters
